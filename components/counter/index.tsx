@@ -1,17 +1,24 @@
 "use client";
+import { useCounterStore } from "@/store/useCounter";
+import { ButtonGroup, Button, Stack } from "@mui/material";
 
-import { countSelector, useCounter } from "@/store/useCounter";
+import AddIcon from "@mui/icons-material/Add";
+import RemoveIcon from "@mui/icons-material/Remove";
 
 export function Counter() {
-  const { count, dec, inc } = useCounter(countSelector);
+  const { count, dec, inc } = useCounterStore();
 
   return (
-    <div className="flex flex-col gap-3">
+    <Stack justifyContent="center" alignItems={"center"} gap={3}>
       <p className="text-center">{count}</p>
-      <button onClick={inc} className="ring-1">
-        inc
-      </button>
-      <button onClick={dec}>dec</button>
-    </div>
+      <ButtonGroup variant="contained">
+        <Button onClick={inc} startIcon={<AddIcon />} variant="contained">
+          inc
+        </Button>
+        <Button onClick={dec} startIcon={<RemoveIcon />} variant="outlined">
+          dec
+        </Button>
+      </ButtonGroup>
+    </Stack>
   );
 }
