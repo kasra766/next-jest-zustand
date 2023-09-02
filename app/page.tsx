@@ -1,5 +1,5 @@
-import { Counter } from "@/components/counter";
+import { LandingPage } from "@/components/landing-page";
 
 export default async function Home() {
-  return <Counter />;
+  return <LandingPage />;
 }

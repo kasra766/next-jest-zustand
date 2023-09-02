@@ -1,5 +1,5 @@
-import { Typography } from "@mui/material";
+import { SignUpFields } from "./components/fields";
 
 export default function SignUpPage() {
-  return <Typography>sign up</Typography>;
+  return <SignUpFields />;
 }

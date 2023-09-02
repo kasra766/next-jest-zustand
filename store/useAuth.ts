@@ -10,10 +10,12 @@ const initialState = {
     lname: "",
     email: "",
     phone: "",
+    user_name: "",
+    password: "",
   },
 };
 
-type UserSignup = typeof initialState.userSignup;
+export type UserSignup = typeof initialState.userSignup;
 
 interface Actions {
   login: () => void;
