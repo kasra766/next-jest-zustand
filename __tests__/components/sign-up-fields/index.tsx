@@ -1,7 +1,9 @@
-import { fireEvent, render, screen } from "@testing-library/react";
+import { cleanup, render, screen } from "@testing-library/react";
 import renderer from "react-test-renderer";
 import "@testing-library/jest-dom";
 import { SignUpFields } from "@/app/(auth)/sign-up/components/fields";
+
+afterEach(cleanup);
 
 describe("testing sign up page", () => {
   it("testing header", () => {

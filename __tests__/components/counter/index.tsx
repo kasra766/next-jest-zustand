@@ -1,8 +1,9 @@
-import { fireEvent, render, screen } from "@testing-library/react";
+import { cleanup, fireEvent, render, screen } from "@testing-library/react";
 import renderer from "react-test-renderer";
 import "@testing-library/jest-dom";
 import { Counter } from "@/components/counter";
 
+afterEach(cleanup);
 describe("testing counter", () => {
   it("test counts value", () => {
     render(<Counter />);
