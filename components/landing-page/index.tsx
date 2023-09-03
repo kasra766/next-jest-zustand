@@ -6,6 +6,8 @@ import { useAuth } from "@/store/useAuth";
 
 export function LandingPage() {
   const { isLogin } = useAuth();
+  console.log(isLogin);
+
   if (isLogin) {
     redirect("/home");
   }
@@ -16,11 +18,11 @@ export function LandingPage() {
         for seeing your profile please login or sign-up
       </Typography>
       <ButtonGroup size="large">
-        <Button variant="contained">
-          <Link href="/login">Login</Link>
+        <Button component={Link} href="/login" variant="contained">
+          Login
         </Button>
-        <Button variant="outlined">
-          <Link href="sign-up">Sign up</Link>
+        <Button component={Link} href="/sign-up" variant="outlined">
+          Sign up
         </Button>
       </ButtonGroup>
     </Stack>

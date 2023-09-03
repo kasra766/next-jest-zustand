@@ -1,7 +1,7 @@
 "use client";
 
 import { useForm } from "react-hook-form";
-import { Button, Stack } from "@mui/material";
+import { Button, Paper, Stack, Typography } from "@mui/material";
 import { FormField } from "@/components/text-field";
 import { type UserSignup, useAuth } from "@/store/useAuth";
 import { emailPattern, mobilePattern, strongRegex } from "@/lib/patterns";
@@ -16,7 +16,15 @@ export function SignUpFields() {
   };
 
   return (
-    <Stack component="form" onSubmit={handleSubmit(submit)} rowGap={2}>
+    <Paper
+      component="form"
+      onSubmit={handleSubmit(submit)}
+      elevation={12}
+      className="flex min-w-[500px] max-w-[600px] flex-col  gap-3 p-8"
+    >
+      <Typography variant="h4" mb={2}>
+        Sign Up
+      </Typography>
       <Stack direction={"row"} columnGap={2}>
         <FormField
           control={control}
@@ -25,7 +33,7 @@ export function SignUpFields() {
             required: { value: true, message: "name is required" },
           }}
           type="text"
-          label="name"
+          label="Name"
           autoFocus
         />
         <FormField
@@ -35,7 +43,7 @@ export function SignUpFields() {
             required: { value: true, message: "last name is required" },
           }}
           type="text"
-          label="last name"
+          label="Last Name"
         />
       </Stack>
       <Stack direction={"row"} columnGap={2}>
@@ -50,7 +58,7 @@ export function SignUpFields() {
             },
           }}
           type="tel"
-          label="phone"
+          label="Phone"
         />
         <FormField
           control={control}
@@ -59,7 +67,7 @@ export function SignUpFields() {
             required: { value: true, message: "user name is required" },
           }}
           type="text"
-          label="user name"
+          label="User Name"
         />
       </Stack>
       <FormField
@@ -73,7 +81,7 @@ export function SignUpFields() {
           },
         }}
         type="email"
-        label="email"
+        label="Email"
       />
 
       <FormField
@@ -89,12 +97,12 @@ export function SignUpFields() {
           },
         }}
         type="password"
-        label="password"
+        label="Password"
       />
 
       <Button fullWidth type="submit" variant="contained">
         Submit
       </Button>
-    </Stack>
+    </Paper>
   );
 }

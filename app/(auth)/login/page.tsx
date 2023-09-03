@@ -1,5 +1,5 @@
-import { Typography } from "@mui/material";
+import { LoginFields } from "./components/fields";
 
 export default function LoginPage() {
-  return <Typography>login page</Typography>;
+  return <LoginFields />;
 }
