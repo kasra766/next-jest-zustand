@@ -14,14 +14,24 @@ export function LandingPage() {
   return (
     <Stack justifyContent={"center"} alignItems={"center"} rowGap={3}>
       <Typography variant="h1">Welcome to over page</Typography>
-      <Typography variant="body1">
+      <Typography variant="body1" role="contentinfo">
         for seeing your profile please login or sign-up
       </Typography>
       <ButtonGroup size="large">
-        <Button component={Link} href="/login" variant="contained">
+        <Button
+          component={Link}
+          href="/login"
+          variant="contained"
+          role="button"
+        >
           Login
         </Button>
-        <Button component={Link} href="/sign-up" variant="outlined">
+        <Button
+          component={Link}
+          href="/sign-up"
+          variant="outlined"
+          role="button"
+        >
           Sign up
         </Button>
       </ButtonGroup>
