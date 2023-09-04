@@ -1,19 +1,16 @@
 "use client";
+import Link from "next/link";
 import { Button, Paper, Typography } from "@mui/material";
 import { useForm } from "react-hook-form";
 import { FormField } from "@/components/text-field";
-import { useAuth } from "@/store/useAuth";
+import { useSubmit } from "../../hooks/useSubmit";
 
 export function LoginFields() {
-  const { login, signup } = useAuth();
+  const { submit } = useSubmit();
   const { control, handleSubmit } = useForm({
     defaultValues: { user_name: "", password: "" },
   });
 
-  const submit = (data: { user_name: string; password: string }) => {
-    signup(data);
-    login();
-  };
   return (
     <Paper
       component="form"
@@ -50,6 +47,14 @@ export function LoginFields() {
       />
       <Button variant="contained" type="submit">
         submit
+      </Button>
+      <Button
+        variant="text"
+        component={Link}
+        href="/sign-up"
+        data-testid="submit-btn"
+      >
+        sign up
       </Button>
     </Paper>
   );

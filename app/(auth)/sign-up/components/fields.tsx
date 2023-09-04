@@ -3,17 +3,13 @@
 import { useForm } from "react-hook-form";
 import { Button, Paper, Stack, Typography } from "@mui/material";
 import { FormField } from "@/components/text-field";
-import { type UserSignup, useAuth } from "@/store/useAuth";
+import { type UserSignup } from "@/store/useAuth";
 import { emailPattern, mobilePattern, strongRegex } from "@/lib/patterns";
+import { useSubmit } from "../../hooks/useSubmit";
 
 export function SignUpFields() {
-  const { user_information: defaultValues, login, signup } = useAuth();
+  const { defaultValues, submit } = useSubmit();
   const { control, handleSubmit } = useForm<UserSignup>({ defaultValues });
-
-  const submit = (data: UserSignup) => {
-    signup(data);
-    login();
-  };
 
   return (
     <Paper
