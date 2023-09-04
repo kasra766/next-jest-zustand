@@ -7,7 +7,7 @@ import { type UserSignup, useAuth } from "@/store/useAuth";
 import { emailPattern, mobilePattern, strongRegex } from "@/lib/patterns";
 
 export function SignUpFields() {
-  const { userSignup: defaultValues, login, signup } = useAuth();
+  const { user_information: defaultValues, login, signup } = useAuth();
   const { control, handleSubmit } = useForm<UserSignup>({ defaultValues });
 
   const submit = (data: UserSignup) => {

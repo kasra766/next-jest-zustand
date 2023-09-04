@@ -6,8 +6,6 @@ import { useAuth } from "@/store/useAuth";
 
 export function LandingPage() {
   const { isLogin } = useAuth();
-  console.log(isLogin);
-
   if (isLogin) {
     redirect("/home");
   }

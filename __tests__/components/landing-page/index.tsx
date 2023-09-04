@@ -1,4 +1,4 @@
-import { cleanup, fireEvent, render, screen } from "@testing-library/react";
+import { cleanup, render, screen } from "@testing-library/react";
 import renderer from "react-test-renderer";
 import "@testing-library/jest-dom";
 import { LandingPage } from "@/components/landing-page";
@@ -9,9 +9,8 @@ describe("landing page test", () => {
     render(<LandingPage />);
 
     const header = screen.getByRole("heading");
-    console.log(header);
+
     const bodyText = screen.getByRole("contentinfo");
-    console.log(bodyText);
 
     expect(header).toBeInTheDocument();
     expect(bodyText).toBeInTheDocument();

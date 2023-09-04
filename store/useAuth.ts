@@ -5,7 +5,7 @@ import { extractor } from "./extractor";
 
 const initialState = {
   isLogin: false,
-  userSignup: {
+  user_information: {
     fname: "",
     lname: "",
     email: "",
@@ -15,12 +15,12 @@ const initialState = {
   },
 };
 
-export type UserSignup = typeof initialState.userSignup;
+export type UserSignup = typeof initialState.user_information;
 
 interface Actions {
   login: () => void;
   logout: () => void;
-  signup: (info: UserSignup) => void;
+  signup: (info: Partial<UserSignup>) => void;
 }
 
 export const useAuthSlice = create(
@@ -33,10 +33,11 @@ export const useAuthSlice = create(
     logout: () =>
       set(state => {
         state.isLogin = false;
+        state.user_information = initialState.user_information;
       }),
     signup: info =>
       set(state => {
-        state.userSignup = info;
+        state.user_information = { ...state.user_information, ...info };
       }),
   })),
 );

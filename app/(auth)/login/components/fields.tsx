@@ -5,12 +5,13 @@ import { FormField } from "@/components/text-field";
 import { useAuth } from "@/store/useAuth";
 
 export function LoginFields() {
-  const { login } = useAuth();
+  const { login, signup } = useAuth();
   const { control, handleSubmit } = useForm({
     defaultValues: { user_name: "", password: "" },
   });
 
   const submit = (data: { user_name: string; password: string }) => {
+    signup(data);
     login();
   };
   return (
