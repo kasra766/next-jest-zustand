@@ -96,7 +96,7 @@ export function SignUpFields() {
         label="Password"
       />
 
-      <Button fullWidth type="submit" variant="contained">
+      <Button fullWidth type="submit" variant="contained" role="button">
         Submit
       </Button>
     </Paper>

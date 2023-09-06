@@ -297,6 +297,7 @@ exports[`snap shot of sign up form snap shot 1`] = `
     onTouchEnd={[Function]}
     onTouchMove={[Function]}
     onTouchStart={[Function]}
+    role="button"
     tabIndex={0}
     type="submit"
   >
@@ -602,6 +603,7 @@ exports[`snap shot of sign up form snap shot 2`] = `
     onTouchEnd={[Function]}
     onTouchMove={[Function]}
     onTouchStart={[Function]}
+    role="button"
     tabIndex={0}
     type="submit"
   >
